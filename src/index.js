@@ -1,6 +1,7 @@
 import fs from "fs";
 import http from "http";
 import url from "url";
+import replaceTemplate from "./utils/replaceTemplate.js";
 
 const __dirname = new URL(".", import.meta.url).pathname;
 const farmData = fs.readFileSync(`${__dirname}/data/farm.json`, "utf-8");
@@ -15,19 +16,6 @@ const product = fs.readFileSync(
 );
 
 const error404 = fs.readFileSync(`${__dirname}/public/pages/404.html`, "utf-8");
-
-const replaceTemplate = (template, product) => {
-    return template
-        .replace(/{{PRODUCT_ID}}/g, product.id)
-        .replace(/{{PRODUCT_FROM}}/g, product.from)
-        .replace(/{{PRODUCT_PRICE}}/g, product.price)
-        .replace(/{{PRODUCT_IMAGE}}/g, product.image)
-        .replace(/{{PRODUCT_NAME}}/g, product.productName)
-        .replace(/{{PRODUCT_QUANTITY}}/g, product.quantity)
-        .replace(/{{PRODUCT_NUTRIENTS}}/g, product.nutrients)
-        .replace(/{{PRODUCT_DESCRIPTION}}/g, product.description)
-        .replace(/{{PRODUCT_ORGANIC}}/g, product.organic ? "organic" : "non-organic")
-};
 
 const server = http.createServer((req, res) => {
     const { pathname, query } = url.parse(req.url, true);
