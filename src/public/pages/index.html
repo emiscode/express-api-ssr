@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌽 Node Farm</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background: lightyellow;
+        }
+
+        h1 {
+            color: darkolivegreen;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: lightgoldenrodyellow;
+            display: inline-table;
+            justify-content: space-evenly;
+            margin: 0.5em;
+            box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px;
+            border-radius: 5px;
+            border: 1px solid darkolivegreen;
+            min-height: 15em;
+            max-height: 15em;
+            min-width: 15em;
+            max-width: 15em;
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+        }
+
+        .card:hover {
+            border: 1px solid lightsalmon;
+        }
+
+        .card-bottom {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .product-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .product-image {
+            font-size: 3rem;
+        }
+
+        .product-link {
+            text-decoration: none;
+        }
+
+        .product-organic {
+            font-size: 0.8em;
+            font-weight: bold;
+            color: lightgreen;
+            background: darkolivegreen;
+            padding: 3px;
+            width: 6em;
+            text-transform: uppercase;
+            border-radius: 100px;
+            margin: 0 auto;
+        }
+
+        .non-organic {
+            display: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🌽 Node Farm</h1>
+    <div>{{PRODUCT_CARDS}}</div>
+</body>
+
+</html>
